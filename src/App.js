@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
@@ -40,7 +40,7 @@ function App() {
         <Alert alert={alert} />
         <Routes>
           <Route exact path="/" element={<TextForm Heading="Enter Your Text" mode={mode} showAlert={showAlert} />} />
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/about" element={<About mode={mode}/>} />
           <Route path="/*" element={<Page404 mode ={mode}/>} />
           {/* <Route path="/*" element={<Navigate to="/"/>} /> */}
         </Routes>
